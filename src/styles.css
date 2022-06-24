@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.status {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board-row {
+  display: flex;
+}
+
+.square {
+  border: none;
+  padding: 10px;
+
+  height: 100px;
+  width: 100px;
+
+  font-size: 300%;
+
+  background-color: #e8e8e8;
+
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #d4d4d4;
+}
+
+.square0 {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.square1 {
+  border-bottom: 1px solid black;
+}
+
+.square2 {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.square3 {
+  border-right: 1px solid black;
+}
+
+.square5 {
+  border-left: 1px solid black;
+}
+
+.square6 {
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.square7 {
+  border-top: 1px solid black;
+}
+
+.square8 {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.endMessage {
+  margin-top: 5px;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+.reset-button {
+  margin-top: 10px;
+  padding: 20px;
+
+  width: 300px;
+
+  font-size: 20px;
+
+  border: none;
+
+  background-color: #99c0ff;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #99ffb8;
+}
