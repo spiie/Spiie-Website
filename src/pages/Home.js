@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="games">
-        <GameCard name='Morpion' image='https://cdn.icon-icons.com/icons2/390/PNG/512/tic-tac-toe_39453.png' link='/morpion'/>
+        <GameCard name='Morpion' image='https://i.imgur.com/Wh5MEb6.png' link='/morpion'/>
         <GameCard name='Login (SOON)' image='https://i.imgur.com/3YmEZsQ.png' link='/'/>
       </div>
     </div>
