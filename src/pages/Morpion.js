@@ -129,15 +129,17 @@ const Board = () => {
         ) {
           setTheWinner(nextSquares[index]);
           setHasWinner(true);
-        } else if (
-          R.pipe(R.filter((value) => value === null))(squares).length === 0
-        ) {
-          setHasWinner(true); // everyone win !
-          setTheWinner(null);
-        } else {
-          const nextTurn = turn === "x" ? "o" : "x";
-          setTurn(nextTurn);
+          return
         }
+      }
+      if (
+        R.pipe(R.filter((value) => value === null))(squares).length === 0
+      ) {
+        setHasWinner(true); // everyone win !
+        setTheWinner(null);
+      } else {
+        const nextTurn = turn === "x" ? "o" : "x";
+        setTurn(nextTurn);
       }
     }
   };
