@@ -1,0 +1,49 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.games {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  
+  background-color: #6ebbff;
+  
+  margin: 10px;
+  padding: 8px;
+  
+  border-radius: 15px;
+
+  max-width: 20%;
+  max-height: 20%;
+  min-width: 250px;
+  min-height: 250px;
+  width: auto;
+  height: auto;
+  
+}
+
+.game-card img {
+  max-width: 70%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  align-self: center;
+}
+
+.game-card h1 {
+  font-size: 35px;
+  text-align: center;
+  background-color: white;
+  width: 70%;
+  align-self: center;
+}

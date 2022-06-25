@@ -1,4 +1,3 @@
-import "../styles.css";
 import React, { useState } from "react";
 import * as R from "ramda";
 
