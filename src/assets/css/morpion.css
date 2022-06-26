@@ -54,6 +54,14 @@ a {
   transition: background-color 0.3s;
 }
 
+.square:disabled {
+  background-color: #d2ffd3;
+}
+
+.square:disabled:hover {
+  background-color: #d2ffd3;
+}
+
 .square:hover {
   background-color: #d4d4d4;
 }

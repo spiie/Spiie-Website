@@ -17,7 +17,7 @@ const Home = () => {
     <div className="home">
       <div className="games">
         <GameCard name='Morpion' image='https://i.imgur.com/Wh5MEb6.png' link='/morpion'/>
-        <GameCard name='Login (SOON)' image='https://i.imgur.com/3YmEZsQ.png' link='/'/>
+        <GameCard name='Login (SOON)' image='https://i.imgur.com/3YmEZsQ.png' link="/"/>
       </div>
     </div>
   )
