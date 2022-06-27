@@ -1,0 +1,29 @@
+.b-box {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top label {
+  display: flex;
+  flex-direction: column;
+}
+
+.top input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.b-box input[type="submit"]{
+
+}

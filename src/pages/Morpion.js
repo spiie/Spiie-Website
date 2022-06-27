@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import * as R from "ramda";
+import '../assets/css/base.css'
+import '../assets/css/morpion.css'
+
 
 const Square = ({ square, onClick, i, hasWinner }) => {
   return (
@@ -187,7 +190,7 @@ const Board = () => {
 
 const Game = () => {
   return (
-    <div className="game">
+    <div className="game middle">
       <Board />
     </div>
   );
