@@ -8,6 +8,10 @@
   border-radius: 10px;
 }
 
+.errorLogIn {
+  color: red;
+}
+
 .top {
   display: flex;
   flex-direction: column;
@@ -22,8 +26,4 @@
 .top input {
   padding: 5px;
   font-size: 14px;
-}
-
-.b-box input[type="submit"]{
-
 }

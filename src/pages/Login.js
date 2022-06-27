@@ -17,6 +17,7 @@ const data = {
 const LogIn = () => {
     const [validity, setValidity] = useState(false)
     const [nameLogAs, setNameLogAs] = useState('')
+    const [errorLogIn, setErrorLogIn] = useState(false)
 
 
     const submit = (e, email, password) => {
@@ -25,9 +26,12 @@ const LogIn = () => {
         for (let i = 0; i < profils.length; i++) {
             console.log(profils[i].username);
             if (profils[i].email === email && profils[i].password === password) {
+                setErrorLogIn(false)
                 return setNameLogAs(profils[i].username), setValidity(true)
             }
         }
+
+        if(validity != true) setErrorLogIn(true)
     }
     return (
         <div className="middle login">
@@ -50,6 +54,7 @@ const LogIn = () => {
                             id="password"
                             placeholder="Password"
                         />
+                        {errorLogIn === true ? <p className="errorLogIn">Email or Password is wrong.</p> : null}
                     </div>
                     <input type="submit" value="Submit" />
                 </form>}
