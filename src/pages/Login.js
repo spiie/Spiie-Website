@@ -27,11 +27,12 @@ const LogIn = () => {
             console.log(profils[i].username);
             if (profils[i].email === email && profils[i].password === password) {
                 setErrorLogIn(false)
-                return setNameLogAs(profils[i].username), setValidity(true)
+                setNameLogAs(profils[i].username)
+                return setValidity(true)
             }
         }
 
-        if(validity != true) setErrorLogIn(true)
+        if(validity !== true) setErrorLogIn(true)
     }
     return (
         <div className="middle login">
