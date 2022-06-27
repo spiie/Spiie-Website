@@ -3,8 +3,8 @@ import '../assets/css/login.css'
 const data = {
     profils: [
         {
-            username: "Test",
-            email: "test@test.fr",
+            username: "BzZzz🐝💖",
+            email: "taamallahshiraz@gmail.com",
             password: "password"
         },
         {
