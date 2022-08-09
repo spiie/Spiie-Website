@@ -12,6 +12,11 @@ const data = {
             email: "mathieu@souflis.fr",
             password: "password"
         },
+        {
+            username: "Thvsxndmly",
+            email: "gecori1648@anlubi.com",
+            password: "dontlie11"
+        },
     ]
 }
 const LogIn = () => {
