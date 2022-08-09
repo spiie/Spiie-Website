@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Morpion from './pages/Morpion'
+import Chat from './pages/Chat'
 import Login from './pages/Login'
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='*' element={<Home/>}/>
         <Route path='/morpion' element={<Morpion />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/chat' element={<Chat/>} />
       </Routes>
     </BrowserRouter>
   )

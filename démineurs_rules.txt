@@ -1,0 +1,6 @@
+Quand on clique sur une bombe on meurt.
+
+
+
+Clique droit = marquage de la zone comme dangereuse.
+Clique gauche = révéler une zone.
