@@ -21,6 +21,7 @@ const Home = () => {
         <GameCard name='Morpion' image='https://i.imgur.com/Wh5MEb6.png' link='/morpion'/>
         <GameCard name='Login (SOON)' image='https://i.imgur.com/3YmEZsQ.png' link="/login"/>
         <GameCard name='Chat (SOON)' image='https://i.imgur.com/XG6Sb1S.png' link="#"/>
+        <GameCard name='Coctail (SOON)' image='https://previews.123rf.com/images/vladvm/vladvm1507/vladvm150701414/42717512-l-ic%C3%B4ne-de-cocktail-boisson-et-partie-symbole-de-l-alcool-.jpg' link="/coctail"/>
       </div>
     </div>
   )
