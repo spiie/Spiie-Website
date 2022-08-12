@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Morpion from './pages/Morpion'
 import Chat from './pages/Chat'
 import Login from './pages/Login'
+import Coctail from './pages/Coctail'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/morpion' element={<Morpion />} />
         <Route path='/login' element={<Login />} />
         <Route path='/chat' element={<Chat/>} />
+        <Route path='/coctail' element={<Coctail/>} />
       </Routes>
     </BrowserRouter>
   )

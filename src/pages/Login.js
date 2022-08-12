@@ -19,11 +19,13 @@ const data = {
         },
     ]
 }
+
+//en gros y a une fonction maman qui englobe le plus gros et qui return du JSX (HTML)
 const LogIn = () => {
+    
     const [validity, setValidity] = useState(false)
     const [nameLogAs, setNameLogAs] = useState('')
     const [errorLogIn, setErrorLogIn] = useState(false)
-
 
     const submit = (e, email, password) => {
         console.log("a")
@@ -36,7 +38,7 @@ const LogIn = () => {
                 return setValidity(true)
             }
         }
-
+        
         if(validity !== true) setErrorLogIn(true)
     }
     return (

@@ -13,7 +13,8 @@ const GameCard = ({ name, image, link }) => {
 }
 
 
-const Home = () => {
+const Home = () => {  
+
   return (
     <div className="middle home">
       <div className="games">
