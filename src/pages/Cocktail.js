@@ -125,8 +125,8 @@ const CocktailPage = ({ drinkData }) => {
     measures.push(drinkData.strMeasure14)
   }
   return (
-    <div className="left">
-      <div className="descriptionCocktail">
+    <div className="oneCocktailPage">
+      <div className="left">
         <img src={drinkData.strDrinkThumb} alt="cocktailImage" />
         <h1 className="cocktailName">{drinkData.strDrink}</h1>
         <div className="tags">
@@ -139,8 +139,9 @@ const CocktailPage = ({ drinkData }) => {
         <div className="ingredients">
           {ingredients.map((ingredient, index) => {
             return <IngredientBox ingredient={ingredient} measure={measures[index]} key={index} />
-            })}
+          })}
         </div>
+        <p className="instructions">{drinkData.strInstructions}</p>
       </div>
     </div>
   )
@@ -170,6 +171,14 @@ const Cocktail = () => {
     setOneDrink(false)
   }
 
+  const SearchByName = async (name) => {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+    const data = await response.json()
+    setDrinks(data["drinks"])
+    setAllDrinks(true)
+    setOneDrink(false)
+  }
+
   const loadDrinks = () => {
     return drinks.map(drink => {
       return (
@@ -187,7 +196,13 @@ const Cocktail = () => {
   return (
     <div className="cokctail">
       <div className="search">
-        <input type="text" name="search" id="search" className="searchText" placeholder="Search Cocktail" />
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          SearchByName(e.target[0].value)
+          e.target[0].value = ""
+        }} >
+          <input type="text" name="search" id="search" className="searchText" placeholder="Search Cocktail" />
+        </form>
         <div className="searchByLetter">
           <button onClick={() => SearchByLetter("a")}>A</button>
           <button onClick={() => SearchByLetter("b")}>B</button>
