@@ -1,0 +1,49 @@
+body {
+  background: linear-gradient(39deg, rgba(6,0,112,1) 0%, rgba(9,51,121,1) 38%, rgba(0,137,255,1) 100%);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.coctail {
+  font-size: 25px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.searchText {
+  font-size: 25px;
+}
+
+.searchByLetter {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 15px;
+  max-width: 100%;
+}
+
+.searchByLetter button {
+  padding: 5px;
+  border: none;
+  
+  color: white;
+
+  width: 40px;
+  background-color: transparent;
+  font-size: 25px;
+ 
+  cursor: pointer;
+}
+
+.boxDrink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
