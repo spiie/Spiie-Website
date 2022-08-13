@@ -53,10 +53,96 @@ const CocktailBox = ({ drink, setAllDrinks, setOneDrink, SearchById }) => {
   )
 }
 
-const CocktailPage = ({drinkData}) => {
-
+const IngredientBox = ({ ingredient, measure }) => {
+  console.log(ingredient)
   return (
-    <p>{drinkData.strDrink}</p>
+    <div className="ingredient">
+      <img src={`https://thecocktaildb.com/images/ingredients/${ingredient}.png`} alt={`${ingredient} look like`} />
+      <p>{ingredient} - {measure}</p>
+    </div>
+  )
+}
+
+const CocktailPage = ({ drinkData }) => {
+
+  let ingredients = []
+  let measures = []
+
+  if (drinkData.strIngredient1) {
+    ingredients.push(drinkData.strIngredient1)
+    measures.push(drinkData.strMeasure1)
+  }
+  if (drinkData.strIngredient2) {
+    ingredients.push(drinkData.strIngredient2)
+    measures.push(drinkData.strMeasure2)
+  }
+  if (drinkData.strIngredient3) {
+    ingredients.push(drinkData.strIngredient3)
+    measures.push(drinkData.strMeasure3)
+  }
+  if (drinkData.strIngredient4) {
+    ingredients.push(drinkData.strIngredient4)
+    measures.push(drinkData.strMeasure4)
+  }
+  if (drinkData.strIngredient5) {
+    ingredients.push(drinkData.strIngredient5)
+    measures.push(drinkData.strMeasure5)
+  }
+  if (drinkData.strIngredient6) {
+    ingredients.push(drinkData.strIngredient6)
+    measures.push(drinkData.strMeasure6)
+  }
+  if (drinkData.strIngredient7) {
+    ingredients.push(drinkData.strIngredient7)
+    measures.push(drinkData.strMeasure7)
+  }
+  if (drinkData.strIngredient8) {
+    ingredients.push(drinkData.strIngredient8)
+    measures.push(drinkData.strMeasure8)
+  }
+  if (drinkData.strIngredient9) {
+    ingredients.push(drinkData.strIngredient9)
+    measures.push(drinkData.strMeasure9)
+  }
+  if (drinkData.strIngredient10) {
+    ingredients.push(drinkData.strIngredient10)
+    measures.push(drinkData.strMeasure10)
+  }
+  if (drinkData.strIngredient11) {
+    ingredients.push(drinkData.strIngredient11)
+    measures.push(drinkData.strMeasure11)
+  }
+  if (drinkData.strIngredient12) {
+    ingredients.push(drinkData.strIngredient12)
+    measures.push(drinkData.strMeasure12)
+  }
+  if (drinkData.strIngredient13) {
+    ingredients.push(drinkData.strIngredient13)
+    measures.push(drinkData.strMeasure13)
+  }
+  if (drinkData.strIngredient14) {
+    ingredients.push(drinkData.strIngredient14)
+    measures.push(drinkData.strMeasure14)
+  }
+  return (
+    <div className="left">
+      <div className="descriptionCocktail">
+        <img src={drinkData.strDrinkThumb} alt="cocktailImage" />
+        <h1 className="cocktailName">{drinkData.strDrink}</h1>
+        <div className="tags">
+          <p className="cocktailCategory">{drinkData.strCategory}</p>
+          <p className="pointSpace">.</p>
+          <p className="cocktailIsAlcoholic">{drinkData.strAlcoholic}</p>
+        </div>
+      </div>
+      <div className="right">
+        <div className="ingredients">
+          {ingredients.map((ingredient, index) => {
+            return <IngredientBox ingredient={ingredient} measure={measures[index]} key={index} />
+            })}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -65,7 +151,7 @@ const Cocktail = () => {
   const [drinks, setDrinks] = useState([])
   const [drinkData, setDrinkData] = useState([])
   const [allDrinks, setAllDrinks] = useState(true)
-  const [oneDrink, setOneDrink] = useState(true)
+  const [oneDrink, setOneDrink] = useState(false)
 
   const SearchById = async (id) => {
     const response = await fetch(`https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -93,7 +179,9 @@ const Cocktail = () => {
   }
 
   const loadDrink = () => {
-    <CocktailPage drinkData={drinkData} />
+    return (
+      <CocktailPage drinkData={drinkData} />
+    )
   }
 
   return (
