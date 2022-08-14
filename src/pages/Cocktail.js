@@ -45,7 +45,7 @@ const CocktailBox = ({ drink, setAllDrinks, setOneDrink, SearchById }) => {
     }}>
       <img src={drink.strDrinkThumb} alt={drink.strDrink} className="cocktailImage" id={drink.idDrink} />
       <p className="cocktailName" id={drink.idDrink}>{drink.strDrink}</p>
-      <div className="specifications">
+      <div className="tags">
         <p className="cocktailIsAlcoholic" id={drink.idDrink}>{drink.strAlcoholic}</p>
         <p className="nbIngredient" id={drink.idDrink}>Nombres d'ingrédients : {numberOfIngredients}</p>
       </div>
@@ -54,17 +54,15 @@ const CocktailBox = ({ drink, setAllDrinks, setOneDrink, SearchById }) => {
 }
 
 const IngredientBox = ({ ingredient, measure }) => {
-  console.log(ingredient)
   return (
     <div className="ingredient">
       <img src={`https://thecocktaildb.com/images/ingredients/${ingredient}.png`} alt={`${ingredient} look like`} />
-      <p>{ingredient} - {measure}</p>
+      <p>{measure} {ingredient}</p>
     </div>
   )
 }
 
 const CocktailPage = ({ drinkData }) => {
-
   let ingredients = []
   let measures = []
 
@@ -131,7 +129,6 @@ const CocktailPage = ({ drinkData }) => {
         <h1 className="cocktailName">{drinkData.strDrink}</h1>
         <div className="tags">
           <p className="cocktailCategory">{drinkData.strCategory}</p>
-          <p className="pointSpace">.</p>
           <p className="cocktailIsAlcoholic">{drinkData.strAlcoholic}</p>
         </div>
       </div>
@@ -148,7 +145,6 @@ const CocktailPage = ({ drinkData }) => {
 }
 
 const Cocktail = () => {
-
   const [drinks, setDrinks] = useState([])
   const [drinkData, setDrinkData] = useState([])
   const [allDrinks, setAllDrinks] = useState(true)
@@ -158,7 +154,6 @@ const Cocktail = () => {
     const response = await fetch(`https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
     const data = await response.json()
     setDrinkData(data["drinks"][0])
-    console.log(drinkData)
     setAllDrinks(false)
     setOneDrink(true)
   }
@@ -180,11 +175,15 @@ const Cocktail = () => {
   }
 
   const loadDrinks = () => {
-    return drinks.map(drink => {
-      return (
-        <CocktailBox drink={drink} setAllDrinks={setAllDrinks} setOneDrink={setOneDrink} SearchById={SearchById} key={drink.idDrink} />
-      )
-    })
+    return (
+      <div className="cocktailPage">
+        {drinks.map(drink => {
+          return (
+            <CocktailBox drink={drink} setAllDrinks={setAllDrinks} setOneDrink={setOneDrink} SearchById={SearchById} key={drink.idDrink} />
+          )
+        })}
+      </div>
+    )
   }
 
   const loadDrink = () => {
@@ -233,7 +232,7 @@ const Cocktail = () => {
         </div>
       </div>
       <div className="resultPage">
-        {drinks.length > 0 && allDrinks === true ? loadDrinks() : null}
+        {drinks != null && drinks.length > 0 && allDrinks === true ? loadDrinks() : null}
         {oneDrink === true ? loadDrink() : null}
       </div>
     </div>
