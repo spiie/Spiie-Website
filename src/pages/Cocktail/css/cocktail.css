@@ -118,6 +118,11 @@ body {
   padding: 5px 30px;
 }
 
+.tag {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 
 .left {
   display: flex;

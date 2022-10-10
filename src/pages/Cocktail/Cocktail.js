@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import '../assets/css/base.css'
-import '../assets/css/cocktail.css'
+import '../../assets/css/base.css'
+import './css/cocktail.css'
 
 
 const CocktailBox = ({ drink, setAllDrinks, setOneDrink, SearchById }) => {
@@ -46,8 +46,8 @@ const CocktailBox = ({ drink, setAllDrinks, setOneDrink, SearchById }) => {
       <img src={drink.strDrinkThumb} alt={drink.strDrink} className="cocktailImage" id={drink.idDrink} />
       <p className="cocktailName" id={drink.idDrink}>{drink.strDrink}</p>
       <div className="tags">
-        <p className="cocktailIsAlcoholic" id={drink.idDrink}>{drink.strAlcoholic}</p>
-        <p className="nbIngredient" id={drink.idDrink}>Nombres d'ingrédients : {numberOfIngredients}</p>
+        <p className="tag cocktailIsAlcoholic" id={drink.idDrink}>{drink.strAlcoholic}</p>
+        <p className="tag nbIngredient" id={drink.idDrink}>Nombres d'ingrédients : {numberOfIngredients}</p>
       </div>
     </div>
   )
@@ -128,8 +128,8 @@ const CocktailPage = ({ drinkData }) => {
         <img src={drinkData.strDrinkThumb} alt="cocktailImage" />
         <h1 className="cocktailName">{drinkData.strDrink}</h1>
         <div className="tags">
-          <p className="cocktailCategory">{drinkData.strCategory}</p>
-          <p className="cocktailIsAlcoholic">{drinkData.strAlcoholic}</p>
+          <p className="tag cocktailCategory">{drinkData.strCategory}</p>
+          <p className="tag cocktailIsAlcoholic">{drinkData.strAlcoholic}</p>
         </div>
       </div>
       <div className="right">

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import '../assets/css/login.css'
+import React, { useState, useEffect } from 'react';
+import './css/login.css'
 const data = {
     profils: [
         {
@@ -22,6 +22,17 @@ const data = {
 
 //en gros y a une fonction maman qui englobe le plus gros et qui return du JSX (HTML)
 const LogIn = () => {
+
+    const [usersData, setUsersData] = useState()
+
+    useEffect(() => {
+        const response = fetch('/api', (res) => {
+            return response = res.json()
+        })
+        setUsersData(response)
+    })
+
+    console.log(usersData)
     
     const [validity, setValidity] = useState(false)
     const [nameLogAs, setNameLogAs] = useState('')

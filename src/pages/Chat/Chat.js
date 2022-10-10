@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import '../assets/css/chat.css'
+import './css/chat.css'
 
 const Message = ({ isSender, UserName, UserImage }) => { 
   

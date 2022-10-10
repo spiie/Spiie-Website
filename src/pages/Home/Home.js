@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import '../assets/css/base.css'
-import '../assets/css/home.css'
+import '../../assets/css/base.css'
+import './css/home.css'
 
 const GameCard = ({ name, image, link }) => {
   return(

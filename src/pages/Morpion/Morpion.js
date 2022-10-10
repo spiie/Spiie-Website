@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as R from "ramda";
-import '../assets/css/base.css'
-import '../assets/css/morpion.css'
+import '../../assets/css/base.css'
+import './css/morpion.css'
 
 
 const Square = ({ square, onClick, i, hasWinner }) => {
